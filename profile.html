@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - BeatHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-header {
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-info h2 {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .profile-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .profile-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .follow-button {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .message-button {
+            background-color: var(--card-background);
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .profile-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tab {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .track-card {
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .track-waveform {
+            height: 100px;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+        }
+
+        .track-info h3 {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .track-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            color: #666;
+        }
+
+        .track-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .track-action {
+            padding: 0.5rem;
+            border-radius: 50%;
+            background-color: var(--background-color);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .track-action:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .bio-section {
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-link:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>BeatHub</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="feed.html"><i class="fas fa-music"></i> Feed</a>
+            <a href="upload.html"><i class="fas fa-upload"></i> Upload</a>
+            <a href="profile.html" class="active"><i class="fas fa-user"></i> Profile</a>
+        </div>
+        <div class="nav-search">
+            <input type="text" placeholder="Search beats, artists, genres...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="profile-container">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-avatar"></div>
+                <div class="profile-info">
+                    <h2>ProducerX</h2>
+                    <p>Hip Hop Producer | Beat Maker</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <div class="stat-value">128</div>
+                            <div class="stat-label">Tracks</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">15.2K</div>
+                            <div class="stat-label">Followers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">2.4K</div>
+                            <div class="stat-label">Following</div>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="profile-button follow-button">Follow</button>
+                        <button class="profile-button message-button">Message</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bio Section -->
+            <div class="bio-section">
+                <h3>About</h3>
+                <p>Professional beat maker and producer with over 5 years of experience. Specializing in hip hop, trap, and R&B. Available for collaborations and custom beats.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i> @producerx</a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i> @producerx</a>
+                    <a href="#" class="social-link"><i class="fab fa-soundcloud"></i> ProducerX</a>
+                </div>
+            </div>
+
+            <!-- Profile Tabs -->
+            <div class="profile-tabs">
+                <div class="tab active">Tracks</div>
+                <div class="tab">Beat Store</div>
+                <div class="tab">Playlists</div>
+                <div class="tab">Likes</div>
+            </div>
+
+            <!-- Tracks Grid -->
+            <div class="tracks-grid">
+                <div class="track-card">
+                    <div class="track-waveform"></div>
+                    <div class="track-info">
+                        <h3>Summer Vibes</h3>
+                        <p>Hip Hop • Trap</p>
+                    </div>
+                    <div class="track-meta">
+                        <span>2:45</span>
+                        <div class="track-actions">
+                            <div class="track-action"><i class="fas fa-play"></i></div>
+                            <div class="track-action"><i class="fas fa-heart"></i></div>
+                            <div class="track-action"><i class="fas fa-shopping-cart"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="track-card">
+                    <div class="track-waveform"></div>
+                    <div class="track-info">
+                        <h3>Midnight Dreams</h3>
+                        <p>R&B • Soul</p>
+                    </div>
+                    <div class="track-meta">
+                        <span>3:15</span>
+                        <div class="track-actions">
+                            <div class="track-action"><i class="fas fa-play"></i></div>
+                            <div class="track-action"><i class="fas fa-heart"></i></div>
+                            <div class="track-action"><i class="fas fa-shopping-cart"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More track cards will be added dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>BeatHub</h4>
+                <p>Your music, your community</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
