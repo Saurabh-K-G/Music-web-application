@@ -3,145 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload - BeatHub</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Upload - Audly</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .upload-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .upload-form {
-            background-color: var(--card-background);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-group input[type="text"],
-        .form-group input[type="number"],
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-family: inherit;
-        }
-
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .upload-area {
-            border: 2px dashed var(--primary-color);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .upload-area:hover {
-            background-color: rgba(108, 99, 255, 0.1);
-        }
-
-        .upload-area i {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .tag-input {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            min-height: 50px;
-        }
-
-        .tag {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .tag i {
-            cursor: pointer;
-        }
-
-        .pricing-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .pricing-option {
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            padding: 1rem;
-            cursor: pointer;
-            transition: border-color 0.3s ease;
-        }
-
-        .pricing-option:hover {
-            border-color: var(--primary-color);
-        }
-
-        .pricing-option.selected {
-            border-color: var(--primary-color);
-            background-color: rgba(108, 99, 255, 0.1);
-        }
-
-        .submit-button {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: var(--border-radius);
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            width: 100%;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-2px);
-        }
-    </style>
+   
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-brand">
-            <h1>BeatHub</h1>
-        </div>
-        <div class="nav-links">
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="feed.html"><i class="fas fa-music"></i> Feed</a>
-            <a href="upload.html" class="active"><i class="fas fa-upload"></i> Upload</a>
-            <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+            <h1>Audly</h1>
         </div>
         <div class="nav-search">
             <input type="text" placeholder="Search beats, artists, genres...">
@@ -181,68 +53,9 @@
                         <input type="text" placeholder="Add tags...">
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label>License Type</label>
-                    <div class="pricing-options">
-                        <div class="pricing-option">
-                            <h4>Basic</h4>
-                            <p>$29.99</p>
-                            <ul>
-                                <li>Non-exclusive rights</li>
-                                <li>Streaming & downloads</li>
-                                <li>1 year license</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-option selected">
-                            <h4>Premium</h4>
-                            <p>$99.99</p>
-                            <ul>
-                                <li>Non-exclusive rights</li>
-                                <li>Unlimited streams</li>
-                                <li>Lifetime license</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-option">
-                            <h4>Exclusive</h4>
-                            <p>$299.99</p>
-                            <ul>
-                                <li>Full exclusive rights</li>
-                                <li>Unlimited usage</li>
-                                <li>Transfer ownership</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
                 <button type="submit" class="submit-button">Upload Track</button>
             </form>
         </div>
     </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>BeatHub</h4>
-                <p>Your music, your community</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-                <a href="#">Terms</a>
-                <a href="#">Privacy</a>
-            </div>
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
 </body>
 </html> 
