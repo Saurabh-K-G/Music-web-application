@@ -1,95 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audly - Music Social Platform</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Audly - Web Player: Music for everyone</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-brand">
-            <h1>Audly</h1>
+  <div class="spotify-app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar__logo">
+            <img src="img/logo.svg" alt="Logo">
+            <span class="logo-name">Audly</span>
         </div>
-        <div class="nav-links">
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="feed.html"><i class="fas fa-music"></i> Feed</a>
-            <a href="upload.html"><i class="fas fa-upload"></i> Upload</a>
-            <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
-        </div>
-        <div class="nav-search">
-            <input type="text" placeholder="Search beats, artists, genres...">
-            <button><i class="fas fa-search"></i></button>
-        </div>
-    </nav>
+      <nav class="sidebar__nav">
+        <ul>
+          <li><img class="invert" src="img/fav.svg" alt="Favorite"></li>
+          <li><img class="invert" src="img/add.svg" alt="Add"></li>
+          <li><img class="invert" src="img/lib.svg" alt="Library"></li>
+
+        </ul>
+      </nav>
+      <div class="sidebar__playlists">
+        <img src="img/home.png" alt="playlist"/>
+        <img src="img/first.jpg" alt="playlist"/>
+        <img src="img/about.jpg" alt="playlist"/>
+      </div>
+    </aside>
 
     <!-- Main Content -->
-    <main class="container">
-        <!-- Hero Section -->
-        <section class="hero">
-            <h2>Discover & Share Music</h2>
-            <p>Connect with musicians, share your beats, and grow your audience</p>
-            <button class="cta-button">Get Started</button>
-        </section>
-
-        <!-- Featured Section -->
-        <section class="featured">
-            <h3>Trending Now</h3>
-            <div class="grid-container">
-                <div class="card">
-                    <img src="images/home.png" alt="Summer Vibes Cover" class="card-img">
-                    <div class="waveform"></div>
-                    <h4>Summer Vibes</h4>
-                    <p>by ProducerX</p>
-                    <div class="card-actions">
-                        <button class="play-btn"><i class="fas fa-play"></i></button>
-                        <button class="buy-btn">License</button>
-                    </div>
-                </div>
-                <!-- More cards will be added dynamically -->
-            </div>
-        </section>
-
-        <!-- Categories Section -->
-        <section class="categories">
-            <h3>Browse by Genre</h3>
-            <div class="genre-tags">
-                <span class="tag">Hip Hop</span>
-                <span class="tag">Electronic</span>
-                <span class="tag">R&B</span>
-                <span class="tag">Pop</span>
-                <span class="tag">Jazz</span>
-                <span class="tag">Rock</span>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Audly</h4>
-                <p>Your music, your community</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="terms.html">Terms</a>
-                <a href="privacy.html">Privacy</a>
-            </div>
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
+    <main class="main-content">
+      <header class="main-header">
+        <div class="main-header__nav">
+          <button>&lt;</button>
+          <button>&gt;</button>
         </div>
-    </footer>
+        <input class="main-header__search" type="text" placeholder="What do you want to play?"/>
+        <div class="main-header__profile">
+          <button><a href="premium.html"></a>Explor premium</button>
+          <span>S   </span>
+        </div>
+        <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </header>
+      <nav class="mobile-menu" id="mobile-menu">
+        <ul>
+          <li><a href="feed.html">Feed</a></li>
+          <li><a href="upload.html">Upload</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="#">Seatting</a></li>
+        </ul>
+      </nav>
+      <section class="main-section">
+        <div class="main-section__tabs">
+          <button class="active">All</button>
+          <button>Music</button>
+          <button>Podcasts</button>
+        </div>
+        <div class="main-section__scroll">
+          <div class="main-section__card">Liked Songs</div>
+          <div class="main-section__card">Recent</div>
+          <div class="main-section__card">Best Songs</div>
+        </div>
+        <h2>Made For saurabh</h2>
+        <div class="main-section__grid">
+          <div class="playlist-card" data-song="song/1.mp3">
+            <img src="img/artist-1.jpg" alt=""/>
+            <div class="playlist-card__info">
+              <h6>Discover Weekly</h6>
+              <p>Your weekly mixtape of fresh music...</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="main-section__grid">
+          <div class="playlist-card" data-song="song/2.mp3">
+            <img src="img/artist-2.jpg" alt=""/>
+            <div class="playlist-card__info">
+              <h6>Discover Weekly</h6>
+              <p>Your weekly mixtape of fresh music...</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="main-section__grid">
+          <div class="playlist-card" data-song="song/3.mp3">
+            <img src="img/artist-3.jpg" alt=""/>
+            <div class="playlist-card__info">
+              <h6>Discover Weekly</h6>
+              <p>Your weekly mixtape of fresh music...</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="main-section__grid">
+          <div class="playlist-card" data-song="song/4.mp3">
+            <img src="img/artist-4.jpg" alt=""/>
+            <div class="playlist-card__info">
+              <h6>Discover Weekly</h6>
+              <p>Your weekly mixtape of fresh music...</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="main-section__grid">
+          <div class="playlist-card" data-song="song/5.mp3">
+            <img src="img/artist-5.jpg" alt=""/>
+            <div class="playlist-card__info">
+              <h6>Discover Weekly</h6>
+              <p>Your weekly mixtape of fresh music...</p>
+            </div>
+          </div>
+
+        </div>
+        <h2>Jump back in</h2>
+        <div class="main-section__grid">
+          <div class="playlist-card">
+            <img src="img/artist-6.jpg" alt=""/>
+            <div class="playlist-card__info">
+              <h6>Unforgettable</h6>
+              <p>Imran Khan</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!--second section-->
+
+    <!-- Now Playing Panel -->
+    <!--<aside class="now-playing">
+      <img src="img/artist-3.jpg" alt="Now Playing"/>
+      <div class="now-playing__info">
+        <h3>Chuttamalle (From "Devara Part 1")</h3>
+        <p>Shilpa Rao, Anirudh Ravichander, Ramajogayya S</p>
+        <div class="now-playing__credits">
+          <strong>Credits</strong>
+          <div>Shilpa Rao <button>Follow</button></div>
+          <div>Anirudh Ravichander <button>Follow</button></div>
+        </div>
+      </div>
+    </aside>
+  </div>-->
+
+  
+  <!-- Footer Player Controls -->
+  <div class="player-controls">
+    <div class="player-controls__main">
+      <button id="prev-btn">⏮</button>
+      <button id="play-btn">▶</button>
+      <button id="next-btn">⏭</button>
+    </div>
+    <div class="player-controls__progress">
+      <span>0:00</span>
+      <input type="range" min="0" max="100" value="0"/>
+      <span>3:45</span>
+    </div>
+    <div class="player-controls__volume">
+      <span>🔊</span>
+      <input type="range" min="0" max="100" value="50"/>
+    </div>
+  </div>
+  <audio id="audio-player" src="song/1.mp3" preload="auto" style="display:none;"></audio>
+  
+  <script src="script.js"></script>
 </body>
-</html> 
+</html>
